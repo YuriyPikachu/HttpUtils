@@ -15,6 +15,7 @@
 
 package net.tatans.rhea.network.http;
 
+import net.tatans.coeus.network.tools.HttpUtils;
 import net.tatans.rhea.network.util.IOUtils;
 import org.apache.http.HttpResponse;
 import org.apache.http.protocol.HTTP;

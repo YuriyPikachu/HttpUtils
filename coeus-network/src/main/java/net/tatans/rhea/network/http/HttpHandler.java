@@ -18,6 +18,7 @@ package net.tatans.rhea.network.http;
 import android.os.SystemClock;
 
 import net.tatans.coeus.exception.HttpException;
+import net.tatans.coeus.network.tools.HttpUtils;
 import net.tatans.rhea.network.http.callback.*;
 import net.tatans.rhea.network.util.OtherUtils;
 import net.tatans.rhea.network.task.PriorityAsyncTask;

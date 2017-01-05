@@ -16,6 +16,7 @@
 package net.tatans.rhea.network.http;
 
 import net.tatans.coeus.exception.HttpException;
+import net.tatans.coeus.network.tools.HttpUtils;
 import net.tatans.rhea.network.http.callback.DefaultHttpRedirectHandler;
 import net.tatans.rhea.network.http.callback.HttpRedirectHandler;
 import org.apache.http.HttpResponse;
