@@ -1,0 +1,60 @@
+version rootProject.ext.VERSION_NAME
+group rootProject.ext.GROUP
+
+buildscript {
+    repositories {
+        maven {
+            url TATANS_URL
+        }
+        // mavenCentral()
+    }
+}
+repositories {
+    maven {
+        url TATANS_URL
+    }
+    //mavenCentral()
+}
+apply plugin: 'com.android.library'
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile files('libs/Msc.jar')
+}
+
+def gitSha() {
+    return 'git rev-parse --short HEAD'.execute().text.trim()
+}
+
+android {
+    compileOptions.encoding="GBK"
+    compileSdkVersion rootProject.ext.targetSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        consumerProguardFiles 'consumer-proguard-rules.pro'
+    }
+    buildTypes{
+        debug{
+        /*    minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'consumer-proguard-rules.pro'*/
+            buildConfigField "boolean", "LEO_DEBUG", "false"
+        }
+        release{
+      /*      minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'consumer-proguard-rules.pro'*/
+            buildConfigField "boolean", "LEO_DEBUG", "true"
+        }
+    }
+}
+
+
+task sourceJar(type: Jar) {
+    from 'src/main/java'
+}
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+apply from: rootProject.file('gradle/checkstyle.gradle')
+apply from: rootProject.file('gradle/gradle-mvn-push.gradle')

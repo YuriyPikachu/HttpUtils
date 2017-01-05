@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/coeus-network/coeus-network.iml" filepath="$PROJECT_DIR$/coeus-network/coeus-network.iml" />
+      <module fileurl="file://$PROJECT_DIR$/searchOOM.iml" filepath="$PROJECT_DIR$/searchOOM.iml" />
+    </modules>
+  </component>
+</project>
